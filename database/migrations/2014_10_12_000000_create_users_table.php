@@ -17,8 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('mobile',11)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('card_number',16)->comment('برای برداشت از کیف پول');
+            $table->enum('is_admin',['0','1'])->default('0')->comment('0=>user 1=>admin');
+            $table->string('wallet')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
