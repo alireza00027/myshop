@@ -1,0 +1,15 @@
+require('files/adminlte');
+require('files/dashboard');
+require('files/demo');
+require('../plugins/jquery/jquery.min');
+require('../plugins/bootstrap/js/bootstrap.bundle.min');
+require('../plugins/morris/morris.min');
+require('../plugins/sparkline/jquery.sparkline.min');
+require('../plugins/jvectormap/jquery-jvectormap-1.2.2.min');
+require('../plugins/jvectormap/jquery-jvectormap-world-mill-en');
+require('../plugins/knob/jquery.knob');
+require('../plugins/daterangepicker/daterangepicker');
+require('../plugins/datepicker/bootstrap-datepicker');
+require('../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min');
+require('../plugins/slimScroll/jquery.slimscroll.min');
+require('../plugins/fastclick/fastclick');
