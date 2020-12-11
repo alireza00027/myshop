@@ -16,8 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
-            $table->bigInteger('card_id');
-            $table->enum('status',['0','1','2'])->comment('0=>در حال بررسی 1=>ثبت شده 2=>مغو شده');
+            $table->text('address');
+            $table->bigInteger('city_id');
+            $table->enum('status',['pending payment','on hold','processing','completed','cancelled','refunded','failed']);
+            $table->string('total_price');
             $table->timestamps();
         });
     }
