@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,7 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Category::orderBy('parent_id')->get();
+
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -25,18 +28,21 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories=Category::all();
+        return view('admin.categories.create',compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return void
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $category=Category::create($request->all());
+        $category->save();
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -58,7 +64,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $parentCategories=Category::all();
+        return view('admin.categories.edit',compact('parentCategories','category'));
     }
 
     /**
@@ -68,9 +75,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
-        //
+        $category->update($request->all());
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -81,6 +89,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return back();
     }
 }
