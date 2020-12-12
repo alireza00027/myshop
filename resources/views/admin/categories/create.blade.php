@@ -49,6 +49,7 @@
                                             <div class="form-group">
                                                 <label for="parent_id">دسته پدر</label>
                                                 <select id="parent_id" name="parent_id" class="form-control">
+                                                    <option value="0">دسته اصلی</option>
                                                     @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->title}}</option>
                                                     @endforeach

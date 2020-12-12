@@ -45,33 +45,19 @@
                                         <label for="title">عنوان دسته</label>
                                         <input type="text" class="form-control" id="title" name="title" placeholder="عنوان دسته را وارد کنید" value="{{$category->title}}" >
                                     </div>
-                                    @if($category->parent_id != 0)
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="parent_id">دسته پدر</label>
-                                                    <select id="parent_id" name="parent_id" class="form-control">
-                                                        @foreach($parentCategories as $parentCategory)
-                                                            <option value="{{$parentCategory->id}}">{{$parentCategory->title}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="parent_id">دسته پدر</label>
+                                                <select id="parent_id" name="parent_id" class="form-control">
+                                                    <option value="0">دسته اصلی</option>
+                                                    @foreach($parentCategories as $parentCategory)
+                                                        <option value="{{$parentCategory->id}}">{{$parentCategory->title}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
-                                    @else
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="parent_id">دسته پدر</label>
-                                                    <select id="parent_id" name="parent_id" class="form-control" disabled="">
-                                                        @foreach($parentCategories as $parentCategory)
-                                                            <option value="0">دسته اصلی</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endif
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
 

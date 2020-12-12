@@ -56,8 +56,8 @@
                                                 {{method_field('delete')}}
                                                 {{csrf_field()}}
                                                 <div class="btn-group btn-group-sm mt-2">
-                                                    <a href="{{route('categories.edit',['category'=>$category->id])}}" class="btn btn-danger">ویرایش</a>
-                                                    <button type="submit" class="btn btn-primary">حذف</button>
+                                                    <a href="{{route('categories.edit',['category'=>$category->id])}}" class="btn btn-primary">ویرایش</a>
+                                                    <button type="submit" class="btn btn-danger">حذف</button>
                                                 </div>
                                             </form>
                                         </td>
