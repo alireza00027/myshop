@@ -28,10 +28,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-sm-11">
-                                    <h3 class="card-title justify-content-center"> لیست برچسب ها</h3>
+                                <div class="col-sm-10">
+                                    <h3 class="card-title"> لیست برچسب ها</h3>
                                 </div>
-                                <div class="col-sm-1">
+                                <div class="col-sm-2">
                                     <a href="{{route('tags.create')}}" class="btn btn-warning">افزودن برچسب</a>
                                 </div>
                             </div>

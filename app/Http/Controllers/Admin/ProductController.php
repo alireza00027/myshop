@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Product;
+use App\Tag;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\True_;
 
 class ProductController extends Controller
 {
@@ -15,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=Product::groupBy()->latest()->paginate(25);
+        $products=Product::latest()->paginate(25);
        return view('admin.products.index',compact('products'));
     }
 
@@ -26,7 +30,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories=Category::orderBy('parent_id')->get();
+        $tags=Tag::all();
+        return view('admin.products.create',compact('categories','tags'));
     }
 
     /**
@@ -35,9 +41,27 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        if ($request->hasFile('images')){
+            foreach ($request->file('images') as $image){
+                $name=time().'.'.$image->getClientOriginalName();
+                $image->move(public_path().'/productsImages/',$name);
+                $data[]=$name;
+            }
+        }
+        $product=new Product();
+        $product->name=$request->input('name');
+        $product->description=$request->input('description');
+        $product->price=$request->input('price');
+        $product->count=$request->input('count');
+        $product->images=json_encode($data);
+        $product->save();
+        $product->categories()->sync($request->input('category_id'));
+        $product->tags()->sync($request->input('tag_id'));
+
+        return redirect()->route('products.index');
+
     }
 
     /**
@@ -48,7 +72,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $categories=$product->categories;
+        $tags=$product->tags;
+        return view('admin.products.show',compact('product','categories','tags'));
     }
 
     /**
@@ -59,7 +85,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories=Category::orderBy('parent_id')->get();
+        $tags=Tag::all();
+        return view('admin.products.edit',compact('product','categories','tags'));
     }
 
     /**
@@ -69,9 +97,24 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+        if ($request->hasFile('images')){
+            foreach ($request->file('images') as $image){
+                $name=time().'.'.$image->getClientOriginalName();
+                $image->move(public_path().'/productsImages/',$name);
+                $data[]=$name;
+                $product->images=json_encode($data);
+            }
+        }
+        $product->name=$request->input('name');
+        $product->description=$request->input('description');
+        $product->price=$request->input('price');
+        $product->count=$request->input('count');
+        $product->update();
+        $product->categories()->sync($request->input('category_id'));
+        $product->tags()->sync($request->input('tag_id'));
+        return  redirect()->route('products.index');
     }
 
     /**
@@ -82,6 +125,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return back();
     }
 }

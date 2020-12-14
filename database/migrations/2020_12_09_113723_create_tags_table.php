@@ -20,7 +20,7 @@ class CreateTagsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('tag_product', function (Blueprint $table) {
+        Schema::create('product_tag', function (Blueprint $table) {
             $table->bigInteger('tag_id');
             $table->bigInteger('product_id');
             $table->primary(['product_id','tag_id']);

@@ -34,12 +34,13 @@
 
     @yield('content')
 
+
     @include('admin.section.footer')
 
 </div>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('js/admin.js')}}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
+@yield('script')
 </body>
 </html>

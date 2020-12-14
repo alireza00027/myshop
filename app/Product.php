@@ -48,6 +48,18 @@ class Product extends Model
         return "/products/$this->slug";
     }
 
+    public function getImages()
+    {
+        $images=json_decode($this->images);
+        return $images;
+    }
+
+    public function getThumbImage()
+    {
+        $images=json_decode($this->images);
+        return $images[0];
+    }
+
 
 
 }
