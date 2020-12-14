@@ -43,6 +43,11 @@ class Product extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function metas()
+    {
+        return $this->hasMany(Meta::class);
+    }
+
     public function path()
     {
         return "/products/$this->slug";

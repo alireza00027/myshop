@@ -108,17 +108,30 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <ul>
-                                                    <li>meta 1</li>
-                                                    <li>meta 2</li>
-                                                    <li>meta 3</li>
-                                                    <li>meta 4</li>
+                                                    @foreach($product->metas as $meta)
+                                                        <li class="row">
+                                                            <div class="col-sm-6">
+                                                                {{$meta->key.':'.$meta->value}}
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <form class="form-group" action="{{route('metas.destroy',['meta'=>$meta->id])}}" method="post">
+                                                                    {{method_field('delete')}}
+                                                                    {{csrf_field()}}
+                                                                    <div class="btn-group btn-group-sm mt-2">
+                                                                        <a href="{{route('metas.edit',['meta'=>$meta->id])}}" class="btn btn-primary">ویرایش</a>
+                                                                        <button type="submit" class="btn btn-danger">حذف</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-footer">
                                         <div class="col-sm-4">
-                                            <a href="#" class="btn btn-warning">افزودن ویژگی</a>
+                                            <a href="{{route('meta.insert',['product'=>$product->id])}}" class="btn btn-warning">افزودن ویژگی</a>
                                         </div>
                                     </div>
                                 </div>
