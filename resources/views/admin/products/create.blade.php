@@ -53,17 +53,17 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="name">نام محصول</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="نام محصول را وارد کنید" >
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="نام محصول را وارد کنید" value="{{old('name')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="description">توضیحات کوتاه</label>
-                                        <textarea rows="6" type="text" class="form-control" id="description" name="description" placeholder="توضیحات کوتاه را وارد کنید"></textarea>
+                                        <textarea rows="6" type="text" class="form-control" id="description" name="description" placeholder="توضیحات کوتاه را وارد کنید">{{old('description')}}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="images">ارسال تصویر</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="images" name="images[]" multiple>
+                                                <input type="file" class="custom-file-input" id="images" name="images[]" multiple value="{{old('images[]')}}">
                                                 <label class="custom-file-label" for="images">انتخاب تصویر</label>
                                             </div>
                                         </div>
@@ -71,11 +71,11 @@
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
                                             <label for="count">تعداد محصول</label>
-                                            <input type="number" class="form-control" id="count" name="count" placeholder="تعداد محصول را وارد کنید" >
+                                            <input type="number" class="form-control" id="count" name="count" placeholder="تعداد محصول را وارد کنید" value="{{old('count')}}" >
                                         </div>
                                         <div class="col-sm-6">
                                             <label for="price">قیمت محصول</label>
-                                            <input type="text" class="form-control" id="price" name="price" placeholder="قیمت محصول را وارد کنید" >
+                                            <input type="text" class="form-control" id="price" name="price" placeholder="قیمت محصول را وارد کنید" value="{{old('price')}}" >
                                         </div>
                                     </div>
                                     <div class="row">
