@@ -58861,33 +58861,33 @@ __webpack_require__(/*! ./jquery.slim */ "./resources/js/jquery.slim.js");
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ../template/plugins/jquery/jquery.min */ "./resources/template/plugins/jquery/jquery.min.js");
+__webpack_require__(/*! ../template/admin/plugins/jquery/jquery.min */ "./resources/template/admin/plugins/jquery/jquery.min.js");
 
-__webpack_require__(/*! ../template/js/adminlte */ "./resources/template/js/adminlte.js");
+__webpack_require__(/*! ../template/admin/js/adminlte */ "./resources/template/admin/js/adminlte.js");
 
-__webpack_require__(/*! ../template/js/dashboard */ "./resources/template/js/dashboard.js");
+__webpack_require__(/*! ../template/admin/js/dashboard */ "./resources/template/admin/js/dashboard.js");
 
-__webpack_require__(/*! ../template/js/demo */ "./resources/template/js/demo.js");
+__webpack_require__(/*! ../template/admin/js/demo */ "./resources/template/admin/js/demo.js");
 
-__webpack_require__(/*! ../template/plugins/bootstrap/js/bootstrap.bundle.min */ "./resources/template/plugins/bootstrap/js/bootstrap.bundle.min.js");
+__webpack_require__(/*! ../template/admin/plugins/bootstrap/js/bootstrap.bundle.min */ "./resources/template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js");
 
-__webpack_require__(/*! ../template/plugins/morris/morris.min */ "./resources/template/plugins/morris/morris.min.js");
+__webpack_require__(/*! ../template/admin/plugins/morris/morris.min */ "./resources/template/admin/plugins/morris/morris.min.js");
 
-__webpack_require__(/*! ../template/plugins/sparkline/jquery.sparkline.min */ "./resources/template/plugins/sparkline/jquery.sparkline.min.js");
+__webpack_require__(/*! ../template/admin/plugins/sparkline/jquery.sparkline.min */ "./resources/template/admin/plugins/sparkline/jquery.sparkline.min.js");
 
-__webpack_require__(/*! ../template/plugins/jvectormap/jquery-jvectormap-1.2.2.min */ "./resources/template/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js");
+__webpack_require__(/*! ../template/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min */ "./resources/template/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js");
 
-__webpack_require__(/*! ../template/plugins/jvectormap/jquery-jvectormap-world-mill-en */ "./resources/template/plugins/jvectormap/jquery-jvectormap-world-mill-en.js");
+__webpack_require__(/*! ../template/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en */ "./resources/template/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js");
 
-__webpack_require__(/*! ../template/plugins/knob/jquery.knob */ "./resources/template/plugins/knob/jquery.knob.js");
+__webpack_require__(/*! ../template/admin/plugins/knob/jquery.knob */ "./resources/template/admin/plugins/knob/jquery.knob.js");
 
-__webpack_require__(/*! ../template/plugins/daterangepicker/daterangepicker */ "./resources/template/plugins/daterangepicker/daterangepicker.js");
+__webpack_require__(/*! ../template/admin/plugins/daterangepicker/daterangepicker */ "./resources/template/admin/plugins/daterangepicker/daterangepicker.js");
 
-__webpack_require__(/*! ../template/plugins/datepicker/bootstrap-datepicker */ "./resources/template/plugins/datepicker/bootstrap-datepicker.js");
+__webpack_require__(/*! ../template/admin/plugins/datepicker/bootstrap-datepicker */ "./resources/template/admin/plugins/datepicker/bootstrap-datepicker.js");
 
-__webpack_require__(/*! ../template/plugins/slimScroll/jquery.slimscroll.min */ "./resources/template/plugins/slimScroll/jquery.slimscroll.min.js");
+__webpack_require__(/*! ../template/admin/plugins/slimScroll/jquery.slimscroll.min */ "./resources/template/admin/plugins/slimScroll/jquery.slimscroll.min.js");
 
-__webpack_require__(/*! ../template/plugins/fastclick/fastclick */ "./resources/template/plugins/fastclick/fastclick.js");
+__webpack_require__(/*! ../template/admin/plugins/fastclick/fastclick */ "./resources/template/admin/plugins/fastclick/fastclick.js");
 
 /***/ }),
 
@@ -62200,10 +62200,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/template/js/adminlte.js":
-/*!*******************************************!*\
-  !*** ./resources/template/js/adminlte.js ***!
-  \*******************************************/
+/***/ "./resources/template/admin/js/adminlte.js":
+/*!*************************************************!*\
+  !*** ./resources/template/admin/js/adminlte.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -62973,10 +62973,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./resources/template/js/dashboard.js":
-/*!********************************************!*\
-  !*** ./resources/template/js/dashboard.js ***!
-  \********************************************/
+/***/ "./resources/template/admin/js/dashboard.js":
+/*!**************************************************!*\
+  !*** ./resources/template/admin/js/dashboard.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63231,10 +63231,10 @@ $(function () {
 
 /***/ }),
 
-/***/ "./resources/template/js/demo.js":
-/*!***************************************!*\
-  !*** ./resources/template/js/demo.js ***!
-  \***************************************/
+/***/ "./resources/template/admin/js/demo.js":
+/*!*********************************************!*\
+  !*** ./resources/template/admin/js/demo.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63432,10 +63432,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
-/***/ "./resources/template/plugins/bootstrap/js/bootstrap.bundle.min.js":
-/*!*************************************************************************!*\
-  !*** ./resources/template/plugins/bootstrap/js/bootstrap.bundle.min.js ***!
-  \*************************************************************************/
+/***/ "./resources/template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65963,14 +65963,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     value: !0
   });
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
-/***/ "./resources/template/plugins/datepicker/bootstrap-datepicker.js":
-/*!***********************************************************************!*\
-  !*** ./resources/template/plugins/datepicker/bootstrap-datepicker.js ***!
-  \***********************************************************************/
+/***/ "./resources/template/admin/plugins/datepicker/bootstrap-datepicker.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/template/admin/plugins/datepicker/bootstrap-datepicker.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -67567,10 +67567,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
-/***/ "./resources/template/plugins/daterangepicker/daterangepicker.js":
-/*!***********************************************************************!*\
-  !*** ./resources/template/plugins/daterangepicker/daterangepicker.js ***!
-  \***********************************************************************/
+/***/ "./resources/template/admin/plugins/daterangepicker/daterangepicker.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/template/admin/plugins/daterangepicker/daterangepicker.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -68662,10 +68662,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 
 /***/ }),
 
-/***/ "./resources/template/plugins/fastclick/fastclick.js":
-/*!***********************************************************!*\
-  !*** ./resources/template/plugins/fastclick/fastclick.js ***!
-  \***********************************************************/
+/***/ "./resources/template/admin/plugins/fastclick/fastclick.js":
+/*!*****************************************************************!*\
+  !*** ./resources/template/admin/plugins/fastclick/fastclick.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -69495,10 +69495,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
 
 /***/ }),
 
-/***/ "./resources/template/plugins/jquery/jquery.min.js":
-/*!*********************************************************!*\
-  !*** ./resources/template/plugins/jquery/jquery.min.js ***!
-  \*********************************************************/
+/***/ "./resources/template/admin/plugins/jquery/jquery.min.js":
+/*!***************************************************************!*\
+  !*** ./resources/template/admin/plugins/jquery/jquery.min.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -73548,14 +73548,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
     return e.$ === w && (e.$ = Kt), t && e.jQuery === w && (e.jQuery = Jt), w;
   }, t || (e.jQuery = e.$ = w), w;
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
-/***/ "./resources/template/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js":
-/*!******************************************************************************!*\
-  !*** ./resources/template/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js ***!
-  \******************************************************************************/
+/***/ "./resources/template/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js":
+/*!************************************************************************************!*\
+  !*** ./resources/template/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -74654,10 +74654,10 @@ jvm.$ = jQuery, jvm.AbstractElement = function (e, t) {
 
 /***/ }),
 
-/***/ "./resources/template/plugins/jvectormap/jquery-jvectormap-world-mill-en.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/template/plugins/jvectormap/jquery-jvectormap-world-mill-en.js ***!
-  \**********************************************************************************/
+/***/ "./resources/template/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js":
+/*!****************************************************************************************!*\
+  !*** ./resources/template/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -75391,10 +75391,10 @@ $.fn.vectorMap('addMap', 'world_mill_en', {
 
 /***/ }),
 
-/***/ "./resources/template/plugins/knob/jquery.knob.js":
-/*!********************************************************!*\
-  !*** ./resources/template/plugins/knob/jquery.knob.js ***!
-  \********************************************************/
+/***/ "./resources/template/admin/plugins/knob/jquery.knob.js":
+/*!**************************************************************!*\
+  !*** ./resources/template/admin/plugins/knob/jquery.knob.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -76109,10 +76109,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./resources/template/plugins/morris/morris.min.js":
-/*!*********************************************************!*\
-  !*** ./resources/template/plugins/morris/morris.min.js ***!
-  \*********************************************************/
+/***/ "./resources/template/admin/plugins/morris/morris.min.js":
+/*!***************************************************************!*\
+  !*** ./resources/template/admin/plugins/morris/morris.min.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -77017,10 +77017,10 @@ Licensed under the BSD-2-Clause License.
 
 /***/ }),
 
-/***/ "./resources/template/plugins/slimScroll/jquery.slimscroll.min.js":
-/*!************************************************************************!*\
-  !*** ./resources/template/plugins/slimScroll/jquery.slimscroll.min.js ***!
-  \************************************************************************/
+/***/ "./resources/template/admin/plugins/slimScroll/jquery.slimscroll.min.js":
+/*!******************************************************************************!*\
+  !*** ./resources/template/admin/plugins/slimScroll/jquery.slimscroll.min.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -77377,10 +77377,10 @@ Licensed under the BSD-2-Clause License.
 
 /***/ }),
 
-/***/ "./resources/template/plugins/sparkline/jquery.sparkline.min.js":
-/*!**********************************************************************!*\
-  !*** ./resources/template/plugins/sparkline/jquery.sparkline.min.js ***!
-  \**********************************************************************/
+/***/ "./resources/template/admin/plugins/sparkline/jquery.sparkline.min.js":
+/*!****************************************************************************!*\
+  !*** ./resources/template/admin/plugins/sparkline/jquery.sparkline.min.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
