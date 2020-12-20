@@ -56,9 +56,9 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td><a href="{{route('products.show',['product'=>$product->id])}}">{{$product->name}}</td>
-                                        <td>description</td>
+                                        <td class="d-block">{{$product->description}}</td>
                                         <td>{{$product->price}}</td>
-                                        <td><img class="img-fluid mb-3 w-25 h-25" src="{{asset('productsImages/'.$product->getThumbImage())}}"></td>
+                                        <td><img class="img-fluid mb-3 w-100 h-25" src="{{asset('productsImages/'.$product->getThumbImage())}}"></td>
                                         <td>{{$product->count}}</td>
                                         <td>{{$product->view_count}}</td>
                                         <td>
