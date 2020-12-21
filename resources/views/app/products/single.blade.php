@@ -48,16 +48,30 @@
                         </p>
                         <div class="card_area">
                             <div class="product_count_area">
-                                <div class="form-group">
-                                    <ul>
-                                        @foreach($product->metas as $meta)
-                                            <li>{{$meta->key.':'.$meta->value}}</li>
-                                        @endforeach
-                                    </ul>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <ul>
+                                                @foreach($product->metas as $meta)
+                                                    <li>{{$meta->key.':'.$meta->value}}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p3>قیمت:{{$product->price}}</p3>
+                                    </div>
                                 </div>
-                                <form action="#">
-
-                                </form>
+                                <div class="mr-5">
+                                    <form action="{{route('carts.addItem',['product'=>$product->id])}}" method="post">
+                                        {{csrf_field()}}
+                                        <div class="form-group ">
+                                            <label for="product_count">تعداد</label>
+                                            <input type="number" name="product_count" id="product_count" placeholder="تعداد را وارد کنید">
+                                        </div>
+                                        <button class="btn-success" type="submit">افزودن به لیست خرید</button>
+                                    </form>
+                                </div>
                             </div>
 
                         </div>

@@ -37,7 +37,7 @@
 
                                     </a>
                                     <a class="dropdown-item" href="checkout.html">چک کردن محصولات</a>
-                                    <a class="dropdown-item" href="cart.html">سبد خرید</a>
+                                    <a class="dropdown-item" href="{{route('carts.show')}}">سبد خرید</a>
                                     <a class="dropdown-item" href="confirmation.html">تایید نهایی</a>
                                     <a class="dropdown-item" href="elements.html">جزئیات</a>
                                 </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="hearer_icon d-flex align-items-center">
                         <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
-                        <a href="cart.html">
+                        <a href="{{route('carts.show')}}">
                             <i class="flaticon-shopping-cart-black-shape"></i>
                         </a>
                     </div>

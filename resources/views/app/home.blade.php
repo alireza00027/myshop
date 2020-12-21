@@ -80,5 +80,5 @@
     </section>
     <!-- trending item end-->
 
-   
+
 @endsection

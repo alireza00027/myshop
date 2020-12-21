@@ -18,4 +18,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('products','ProductController@index')->name('products.list');
-Route::get('/products/{productSlug}','ProductController@single')->name('product@single');
+Route::get('/products/{productSlug}','ProductController@single')->name('product.single');
+Route::post('/cartAddItem/{product}','CartController@add')->name('carts.addItem');
+Route::get('cart','CartController@show')->name('carts.show');
+Route::delete('cartItems/{cartItem}','CartController@destroyCartItem')->name('cartItems.destroy');

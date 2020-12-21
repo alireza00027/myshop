@@ -68,7 +68,6 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="btn-group-sm">
-                                                    <a class="btn btn-success">افزودن به سبد خرید</a>
                                                     <a class="btn btn-primary" href="{{$product->path()}}">جزئیات بیشتر</a>
                                                 </div>
                                             </div>
