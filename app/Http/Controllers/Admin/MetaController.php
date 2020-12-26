@@ -17,8 +17,7 @@ class MetaController extends Controller
     {
         return view('admin.metas.insert',compact('product'));
     }
-
-
+    
     public function store(MetaRequest $request)
     {
         Meta::create($request->all());

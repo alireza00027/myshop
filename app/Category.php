@@ -42,4 +42,8 @@ class Category extends Model
             return "دسته اصلی";
 
     }
+    public function path()
+    {
+        return "/categories/$this->slug";
+    }
 }

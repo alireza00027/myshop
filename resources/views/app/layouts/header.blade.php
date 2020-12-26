@@ -14,48 +14,66 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">صفحه اصلی</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">درباره ما</a>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     محصولات
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                    <a class="dropdown-item" href="product_list.html"> لیست محصولات</a>
-                                    <a class="dropdown-item" href="single-product.html">جزئیات محصولات</a>
-
+                                    <a class="dropdown-item" href="{{route('products.list')}}"> لیست محصولات</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    صفحات
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    دسته بندی محصولات
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                    <a class="dropdown-item" href="login.html">
-                                        ورود
+                                <div class="dropdown-menu"aria-labelledby="navbarDropdown_1">
+                                    @foreach(\App\Category::latest()->get() as $category)
+                                        <a class="dropdown-item" href="{{$category->path()}}">{{$category->title}}</a>
+                                    @endforeach
+                                </div>
 
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    برچسب ها
+                                </a>
+                                <div class="dropdown-menu"aria-labelledby="navbarDropdown_1">
+                                    @foreach(\App\Tag::latest()->get() as $tag)
+                                        <a class="dropdown-item" href="{{$tag->path()}}">{{$tag->title}}</a>
+                                    @endforeach
+                                </div>
+
+                            </li>
+
+                            @if(auth()->check())
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        پنل کاربری
                                     </a>
-                                    <a class="dropdown-item" href="checkout.html">چک کردن محصولات</a>
-                                    <a class="dropdown-item" href="{{route('carts.show')}}">سبد خرید</a>
-                                    <a class="dropdown-item" href="confirmation.html">تایید نهایی</a>
-                                    <a class="dropdown-item" href="elements.html">جزئیات</a>
-                                </div>
-                            </li>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                        <a class="dropdown-item" href="#"> پروفایل من</a>
+                                        <a class="dropdown-item" href="#">لیست سفارشات </a>
+                                        <a class="dropdown-item" href="#">ویرایش اطلاعات</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="{{route('logout')}}" method="post">
+                                        {{csrf_field()}}
+                                        <button type="submit" class="btn-sm btn-warning">خروج از حساب کاربری</button>
+                                    </form>
+                                </li>
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        عضویت
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                        <a class="dropdown-item" href="/login">ورود</a>
+                                        <a class="dropdown-item" href="/register">ثبت نام</a>
+                                    </div>
+                                </li>
+                            @endif
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    وبلاگ
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                    <a class="dropdown-item" href="blog.html"> وبلاگ</a>
-                                    <a class="dropdown-item" href="single-blog.html">صفحه داخلی وبلاگ </a>
-                                </div>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">تماس با ما</a>
-                            </li>
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex align-items-center">

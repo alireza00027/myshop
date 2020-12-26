@@ -129,7 +129,7 @@ class ProductController extends Controller
             unset($tags[$key]);
         }
         $product->tags()->sync($tags);
-        
+
         return  redirect()->route('products.index');
     }
 

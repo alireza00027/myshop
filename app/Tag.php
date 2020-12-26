@@ -27,6 +27,11 @@ class Tag extends Model
 
 
 
+    public function path()
+    {
+        return "/tags/$this->slug";
+    }
+
     public function products()
     {
         return $this->belongsToMany(Product::class);
