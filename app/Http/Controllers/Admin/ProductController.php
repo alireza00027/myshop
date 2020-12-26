@@ -64,6 +64,7 @@ class ProductController extends Controller
             $key=array_search('0',$tags);
             unset($tags[$key]);
         }
+
         $product->tags()->sync($tags);
 
         return redirect()->route('products.index');
@@ -121,7 +122,14 @@ class ProductController extends Controller
         $product->count=$request->input('count');
         $product->update();
         $product->categories()->sync($request->input('category_id'));
-        $product->tags()->sync($request->input('tag_id'));
+
+        $tags=$request->input('tag_id');
+        if (array_search('0',$tags)!==false){
+            $key=array_search('0',$tags);
+            unset($tags[$key]);
+        }
+        $product->tags()->sync($tags);
+        
         return  redirect()->route('products.index');
     }
 
