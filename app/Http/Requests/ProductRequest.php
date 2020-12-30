@@ -30,7 +30,8 @@ class ProductRequest extends FormRequest
                 'images'=>'required',
                 'count'=>'required',
                 'price'=>'required',
-                'category_id'=>'required'
+                'category_id'=>'required',
+                'tag_id'=>'required'
             ];
         }
         return [
@@ -38,7 +39,8 @@ class ProductRequest extends FormRequest
             'description'=>'required',
             'count'=>'required',
             'price'=>'required',
-            'category_id'=>'required'
+            'category_id'=>'required',
+            'tag_id'=>'required'
         ];
     }
 }

@@ -82,7 +82,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="category_id">انتخاب دسته</label>
-                                                <select multiple id="category_id" name="category_id[]" class="form-control">
+                                                <select multiple id="category_id" name="category_id[]" class="form-control" >
                                                     @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->title}}</option>
                                                     @endforeach

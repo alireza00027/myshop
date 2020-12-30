@@ -18,4 +18,12 @@ class CartItem extends Model
     {
         return Product::whereId($this->product_id)->first();
     }
+
+    public function pushCount($count)
+    {
+       $productCount=$this->product_count;
+       $this->product_count=$productCount+$count;
+       $this->update();
+
+    }
 }

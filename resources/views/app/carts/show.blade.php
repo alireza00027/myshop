@@ -47,7 +47,6 @@
                                     <h5>{{($item->getProduct())->price}} تومان</h5>
                                 </td>
                                 <td>
-                                    <div class="product_count" dir="ltr">
                                         <!-- <input type="text" value="1" min="0" max="10" title="Quantity:"
                                           class="input-text qty input-number" />
                                         <button
@@ -58,8 +57,7 @@
                                           class="reduced input-number-decrement items-count" type="button">
                                           <i class="ti-angle-down"></i>
                                         </button> -->
-                                        <input type="number" name="product_count">
-                                    </div>
+                                        <h5>{{$item->product_count}}</h5>
                                 </td>
                                 <td>
                                     <h5>{{(($item->getProduct())->price)*$item->product_count}}</h5>
@@ -73,81 +71,19 @@
                                 </td>
                             </tr>
                         @endforeach
-
-                        <tr class="bottom_button">
-                            <td>
-                                <a class="btn_1" href="{{route('products.list')}}">اضافه کردن به سبد</a>
-                            </td>
-
-                            <td>
-                                <div class="cupon_text float-right">
-                                    <a class="btn_1" href="#">عدم استفاده از کد تخفیف </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <h5>مجموع</h5>
-                            </td>
-                            <td>
-                                <h5>500000 تومان</h5>
-                            </td>
-                        </tr>
-                        <tr class="shipping_area"  dir="ltr">
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <h5></h5>
-                            </td>
-                            <td>
-                                <div class="shipping_box" >
-                                    <ul class="list">
-                                        <li>
-                                            تعرفه ثابت: 30000 تومان
-                                            <input type="radio" aria-label="Radio button for following text input">
-                                        </li>
-                                        <li>
-                                            ارسال کالای رایگان
-                                            <input type="radio" aria-label="Radio button for following text input">
-                                        </li>
-                                        <li>
-                                            تعرفه ثابت: 30000 تومان
-                                            <input type="radio" aria-label="Radio button for following text input">
-                                        </li>
-                                        <li class="active">
-                                            تحویل محلی: 20000 تومان
-                                            <input type="radio" aria-label="Radio button for following text input">
-                                        </li>
-                                    </ul>
-                                    <h6>
-                                        هزینه ارسال کالا
-                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                    </h6>
-                                    <select class="shipping_select" >
-                                        <option value="1">ایران</option>
-                                        <option value="2">هند</option>
-                                        <option value="4">پاکستان</option>
-                                    </select>
-                                    <select class="shipping_select section_bg" >
-                                        <option value="1">یک منطقه را انتخاب کنید</option>
-                                        <option value="2">یک منطقه را انتخاب کنید</option>
-                                        <option value="4">یک منطقه را انتخاب کنید</option>
-                                    </select>
-                                    <input class="post_code" type="text" placeholder="کدپستی" />
-                                    <div class="form-group">
-                                        <textarea class="form-control post_code" type="text" name="address" placeholder="آدرس"></textarea>
-                                    </div>
-                                    <a class="btn_1" href="#">ویرایش جزئیات</a>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>مجموع</td>
+                                <td>{{$sumCartItems}}</td>
+                            </tr>
                         </tbody>
                     </table>
                     <div class="checkout_btn_inner float-right">
+                        <a class="btn_1 checkout_btn_1" href="{{route('products.list')}}">افزودن به سبد خرید</a>
                         <a class="btn_1" href="#">ادامه خرید</a>
-                        <a class="btn_1 checkout_btn_1" href="#">رفتن به قسمت چک کردن محصول</a>
                     </div>
                 </div>
             </div>
