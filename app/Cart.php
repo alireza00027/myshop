@@ -22,4 +22,10 @@ class Cart extends Model
         return $this->hasMany(CartItem::class,'cart_id');
     }
 
+    public function setUser(User $user)
+    {
+        $this->user_id=$user->id;
+        $this->update();
+    }
+
 }

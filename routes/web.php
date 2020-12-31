@@ -32,3 +32,4 @@ Route::middleware('auth')->prefix('/panel')->group(function(){
 
 });
 Route::resource('addresses','AddressController')->middleware('auth');
+Route::resource('orders','OrderController')->middleware('auth');

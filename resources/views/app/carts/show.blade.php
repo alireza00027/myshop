@@ -83,7 +83,7 @@
                     </table>
                     <div class="checkout_btn_inner float-right">
                         <a class="btn_1 checkout_btn_1" href="{{route('products.list')}}">افزودن به سبد خرید</a>
-                        <a class="btn_1" href="#">ادامه خرید</a>
+                        <a class="btn_1" href="{{route('orders.create')}}">ادامه خرید</a>
                     </div>
                 </div>
             </div>
