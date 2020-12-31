@@ -51,7 +51,7 @@
                                         پنل کاربری
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="#"> پروفایل من</a>
+                                        <a class="dropdown-item" href="{{route('dashboard')}}"> پروفایل من</a>
                                         <a class="dropdown-item" href="#">لیست سفارشات </a>
                                         <a class="dropdown-item" href="#">ویرایش اطلاعات</a>
                                     </div>

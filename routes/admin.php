@@ -19,3 +19,7 @@ Route::resource('metas','MetaController')->only('edit','update','destroy');
 //users Routing
 Route::get('/users','UserController@index')->name('users.index');
 Route::post('/users/{user}','UserController@destroy')->name('users.destroy');
+//states Routing
+Route::resource('states','StateController');
+//cities Routing
+Route::resource('cities','CityController');

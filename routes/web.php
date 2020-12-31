@@ -24,3 +24,11 @@ Route::get('tags/{tagSlug}','TagController@showList')->name('tags.showList');
 Route::post('/cartAddItem/{product}','CartController@add')->name('carts.addItem');
 Route::get('cart','CartController@show')->name('carts.show');
 Route::delete('cartItems/{cartItem}','CartController@destroyCartItem')->name('cartItems.destroy');
+
+Route::middleware('auth')->prefix('/panel')->group(function(){
+    Route::get('/','PanelController@index')->name('dashboard');
+    Route::get('/{user}/edit','PanelController@edit')->name('user.edit');
+    Route::patch('/{user}','PanelController@update')->name('user.update');
+
+});
+Route::resource('addresses','AddressController')->middleware('auth');
