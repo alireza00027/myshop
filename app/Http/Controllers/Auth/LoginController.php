@@ -71,6 +71,12 @@ class LoginController extends Controller
             $sessionId=Session::getId();
             $cart=Cart::where('session_id',$sessionId)->first();
             if ($cart !== NULL){
+                $carts=Cart::where('user_id',$user->id)->get();
+                if ($carts!==NULL){
+                    foreach ($carts as $item){
+                        $item->delete();
+                    }
+                }
                 event(new UserSetCart($user,$cart));
             }
         }

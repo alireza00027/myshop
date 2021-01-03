@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Order;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,10 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return "create order page";
+        $user=auth()->user();
+        $cart=Cart::where('user_id',$user->id);
+        dd($user);
+        return view('app.orders.create',compact('cartItems','user'));
     }
 
     /**
