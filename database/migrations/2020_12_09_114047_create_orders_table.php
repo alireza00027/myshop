@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('user_id');
             $table->text('address');
             $table->bigInteger('city_id');
-            $table->enum('status',['pending payment','on hold','processing','completed','cancelled','refunded','failed']);
+            $table->enum('status',['processing','on hold','processing','completed','cancelled','refunded','failed']);
             $table->string('total_price');
             $table->timestamps();
         });

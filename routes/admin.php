@@ -23,3 +23,13 @@ Route::post('/users/{user}','UserController@destroy')->name('users.destroy');
 Route::resource('states','StateController');
 //cities Routing
 Route::resource('cities','CityController');
+//orders Routing
+Route::prefix('/orders')->group(function(){
+    Route::get('/','OrderController@index')->name('admin.orders.index');
+    Route::get('/{order}','OrderController@show')->name('admin.orders.show');
+    Route::prefix('/processing')->group(function (){
+        Route::get('/','OrderController@indexProcessingOrders')->name('orders.processing.index');
+        Route::post('/confirm/{order}','OrderController@confirm')->name('orders.processing.confirm');
+        Route::get('/{order}','OrderController@showProcessingOrder')->name('orders.processing.show');
+    });
+});
