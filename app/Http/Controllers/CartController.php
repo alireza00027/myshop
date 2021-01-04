@@ -69,12 +69,12 @@ class CartController extends Controller
 
 
         $cartItems=$cart->cartItems;
-        $sumCartItems=0;
+        $sumCartItemsPrice=0;
         foreach ($cartItems as $cartItem){
-            $sumCartItems+=($cartItem->product_count)*($cartItem->getProduct())->price;
+            $sumCartItemsPrice+=($cartItem->product_count)*($cartItem->getProduct())->price;
         }
 
-        return view('app.carts.show',compact('cart','cartItems','sumCartItems'));
+        return view('app.carts.show',compact('cart','cartItems','sumCartItemsPrice'));
     }
 
 

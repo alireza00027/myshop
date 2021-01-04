@@ -77,7 +77,9 @@
                                 <td></td>
                                 <td></td>
                                 <td>مجموع</td>
-                                <td>{{$sumCartItems}}</td>
+                                <td>
+                                    <input name="total_price" value="{{$sumCartItemsPrice}}" disabled>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -52,8 +52,8 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                         <a class="dropdown-item" href="{{route('dashboard')}}"> پروفایل من</a>
-                                        <a class="dropdown-item" href="#">لیست سفارشات </a>
-                                        <a class="dropdown-item" href="#">ویرایش اطلاعات</a>
+                                        <a class="dropdown-item" href="{{route('orders.index')}}">لیست سفارشات </a>
+                                        <a class="dropdown-item" href="{{route('user.edit',['user'=>auth()->user()->id])}}">ویرایش اطلاعات</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">

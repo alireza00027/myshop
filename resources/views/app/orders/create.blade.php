@@ -18,6 +18,7 @@
 
     <section class="cart_area section_padding" dir="rtl">
         <div class="container">
+            @include('app.layouts.errors')
             <div class="cart_inner">
                 <div class="table-responsive">
                     <table class="table">
@@ -63,14 +64,6 @@
                                 </td>
                             </tr>
                         @endforeach
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>مجموع</td>
-                            <td>{{$sumCartItems}}</td>
-                        </tr>
                         </tbody>
                     </table>
                     <form class="form-control" action="{{route('orders.store')}}" method="post">
@@ -84,6 +77,10 @@
                                             <div class="col-sm-6">
                                                 <h4>آدرس های شما</h4>
                                             </div>
+                                            <div class="col-sm-6">
+                                                <h4>مجموع:<input name="total_price" value="{{$sumCartItemsPrice}}" ></h4>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -106,7 +103,7 @@
                                                             <td>{{$address->body}}</td>
                                                             <td>
                                                                 <div class="form-control">
-                                                                    <input type="radio" id="address_id" name="address_id" value="{{$address->id}}">
+                                                                    <input type="radio" id="address_id" name="address" value="{{$address->id}}">
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -119,9 +116,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="checkout_btn_inner float-right">
-                            <button type="submit" class="btn_1" href="{{route('orders.store')}}">ثبت سفارش</button>
-                            <a class="btn_1 checkout_btn_1" href="{{route('carts.show')}}">بازگشت به سبد خرید</a>
+                        <div class="card-footer">
+                            <div class="checkout_btn_inner float-right">
+                                <button type="submit" class="btn_1" href="{{route('orders.store')}}">ثبت سفارش</button>
+                                <a class="btn_1 checkout_btn_1" href="{{route('carts.show')}}">بازگشت به سبد خرید</a>
+                                <a class="btn_1 checkout_btn_1" href="{{route('addresses.create')}}">افزودن آدرس جدید</a>
+                            </div>
                         </div>
                     </form>
 

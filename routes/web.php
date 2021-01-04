@@ -25,11 +25,17 @@ Route::post('/cartAddItem/{product}','CartController@add')->name('carts.addItem'
 Route::get('cart','CartController@show')->name('carts.show');
 Route::delete('cartItems/{cartItem}','CartController@destroyCartItem')->name('cartItems.destroy');
 
-Route::middleware('auth')->prefix('/panel')->group(function(){
-    Route::get('/','PanelController@index')->name('dashboard');
-    Route::get('/{user}/edit','PanelController@edit')->name('user.edit');
-    Route::patch('/{user}','PanelController@update')->name('user.update');
+Route::middleware('auth')->group(function(){
+    Route::prefix('/panel')->group(function (){
+        Route::get('/','PanelController@index')->name('dashboard');
+        Route::get('/{user}/edit','PanelController@edit')->name('user.edit');
+        Route::patch('/{user}','PanelController@update')->name('user.update');
+    });
+    Route::resource('addresses','AddressController');
+    Route::resource('orders','OrderController');
+    Route::post('orders/{order}/cancel','OrderController@cancel')->name('orders.cancel');
+    Route::get('/orders/{order}/payment','OrderController@paymentShow')->name('orders.payment.show');
+    Route::post('payment/{order}','OrderController@payment')->name('orders.payment');
 
 });
-Route::resource('addresses','AddressController')->middleware('auth');
-Route::resource('orders','OrderController')->middleware('auth');
+

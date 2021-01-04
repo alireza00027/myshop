@@ -18,4 +18,9 @@ class City extends Model
     {
         return $this->hasMany(Address::class,'city_id');
     }
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'city_id');
+    }
+
 }

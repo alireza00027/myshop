@@ -65,6 +65,4 @@ class Product extends Model
         return $images[0];
     }
 
-
-
 }
