@@ -92,6 +92,10 @@ class RegisterController extends Controller
         $cart=Cart::where('session_id',$sessionId)->first();
         if ($cart!==NULL){
             event(new UserSetCart($user,$cart));
+        }else{
+            $newCart=new Cart();
+            $newCart->user_id=$user->id;
+            $newCart->save();
         }
 
         $this->guard()->login($user);
