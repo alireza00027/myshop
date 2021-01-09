@@ -152,7 +152,10 @@ return array(
         'count'=>'تعداد محصول',
         'key'=>'عنوان ویژگی',
         'value'=>'مقدار ویژگی',
-        'card_number'=>'شماره کارت'
+        'card_number'=>'شماره کارت',
+        'label'=>'توضیحات',
+        'permission_id'=>'دسترسی ها',
+        'role_id'=>'نقش ها'
 
     ),
 );

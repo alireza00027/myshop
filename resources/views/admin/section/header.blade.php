@@ -170,152 +170,216 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-book"></i>
-                            <p>
-                                محصولات
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('products.index')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>لیست محصولات</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('products.create')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>افزودن محصول</p>
-                                </a>
-                            </li>
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fa fa-plus-square-o"></i>
-                                    <p>
-                                        دسته بندی ها
-                                        <i class="fa fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{route('categories.index')}}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>لیست دسته ها</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('categories.create')}}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>افزودن دسته جدید</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fa fa-plus-square-o"></i>
-                                    <p>
-                                        برچسب ها
-                                        <i class="fa fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{route('tags.index')}}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>لیست برچسب ها</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('tags.create')}}" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>افزودن برچسب</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="{{route('users.index')}}" class="nav-link">
-                            <i class="nav-icon fa fa-user-circle"></i>
-                            <p>
-                                کاربران
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus-square-o"></i>
-                            <p>
-                                استان ها
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('states.index')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>لیست استان ها</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('states.create')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>افزودن استان جدید</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus-square-o"></i>
-                            <p>
-                                شهر ها
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('cities.index')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>لیست شهر ها</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('cities.create')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>افزودن شهر جدید</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus-square-o"></i>
-                            <p>
-                                سفارشات
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('admin.orders.index')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>همه ی سفارشات</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('orders.processing.index')}}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>سفارشات قابل بررسی</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    @can('products-management')
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-book"></i>
+                                <p>
+                                    محصولات
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('products.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>لیست محصولات</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('products.create')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>افزودن محصول</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fa fa-plus-square-o"></i>
+                                        <p>
+                                            دسته بندی ها
+                                            <i class="fa fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{route('categories.index')}}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>لیست دسته ها</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('categories.create')}}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>افزودن دسته جدید</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fa fa-plus-square-o"></i>
+                                        <p>
+                                            برچسب ها
+                                            <i class="fa fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{route('tags.index')}}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>لیست برچسب ها</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('tags.create')}}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>افزودن برچسب</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('users-management')
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-user-circle"></i>
+                                <p>
+                                    کاربران
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('users.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>لیست کاربران</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fa fa-plus-square-o"></i>
+                                        <p>
+                                            کاربران مدیریت
+                                            <i class="fa fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{route('level.index')}}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>نقش های کاربران</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('level.create')}}" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>ثبت نقش جدید</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-plus-square-o"></i>
+                                <p>
+                                    نقش ها
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('roles.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>لیست نقش ها</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('roles.create')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>افزودن نقش جدید</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    @endcan
+                    @can('addresses-management')
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-plus-square-o"></i>
+                                <p>
+                                    استان ها
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('states.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>لیست استان ها</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('states.create')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>افزودن استان جدید</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-plus-square-o"></i>
+                                <p>
+                                    شهر ها
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('cities.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>لیست شهر ها</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('cities.create')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>افزودن شهر جدید</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('orders-management')
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-plus-square-o"></i>
+                                <p>
+                                    سفارشات
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.orders.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>همه ی سفارشات</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('orders.processing.index')}}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>سفارشات قابل بررسی</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endcan
 
                 </ul>
             </nav>

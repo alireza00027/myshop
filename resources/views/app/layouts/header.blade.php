@@ -57,9 +57,15 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <form action="{{route('logout')}}" method="post">
+                                    <form action="{{route('logout')}}" method="post" class="form-control mt-3">
                                         {{csrf_field()}}
-                                        <button type="submit" class="btn-sm btn-warning">خروج از حساب کاربری</button>
+                                        <div class="btn-group">
+                                            @if(auth()->user()->is_admin == '1')
+                                                <a class="btn btn-sm btn-primary" href="/admin">پنل مدیریت</a>
+                                            @endif
+                                                <button type="submit" class="btn-sm btn-warning">خروج از حساب کاربری</button>
+                                        </div>
+
                                     </form>
                                 </li>
                             @else

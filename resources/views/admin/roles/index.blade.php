@@ -11,12 +11,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>لیست کاربران</h1>
+                        <h1>لیست مقام ها</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-left">
                             <li class="breadcrumb-item"><a href="#">خانه</a></li>
-                            <li class="breadcrumb-item active">لیست کاربران</li>
+                            <li class="breadcrumb-item active">لیست مقام ها</li>
                         </ol>
                     </div>
                 </div>
@@ -31,12 +31,11 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-sm-10">
-                                    <h3 class="card-title ">کاربران</h3>
+                                    <h3 class="card-title ">مقام ها</h3>
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="btn-group">
-                                        <a href="{{route('roles.index')}}" class="btn btn-primary ">نقش های کاربران</a>
-                                        <a href="{{route('level.index')}}" class="btn btn-success ">کاربران مدیریت</a>
+                                        <a href="{{route('roles.create')}}" class="btn btn-success ">ایجاد نقش جدید</a>
                                     </div>
                                 </div>
                             </div>
@@ -46,34 +45,26 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>نام کاربر</th>
-                                    <th>ایمیل</th>
-                                    <th>موبایل</th>
+                                    <th>نام مقام</th>
+                                    <th>توضیحات</th>
                                     <th>تنظیمات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $user)
+                                @foreach($roles as $role)
                                     <tr>
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->mobile}}</td>
+                                        <td>{{$role->name}}</td>
+                                        <td>{{$role->label}}</td>
                                         <td>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <form class="form-group" action="{{route('users.destroy',['user'=>$user->id])}}" method="post" >
-                                                        {{method_field('delete')}}
-                                                        {{csrf_field()}}
-                                                        <button type="submit" class="btn btn-sm btn-danger">حذف</button>
-                                                    </form>
+                                            <form class="form-group" action="{{route('roles.destroy',['role'=>$role->id])}}" method="post" >
+                                                {{method_field('delete')}}
+                                                {{csrf_field()}}
+                                                <div class="btn-group-sm">
+                                                    <a class="btn btn-primary" href="{{route('roles.edit',['role'=>$role->id])}}">ویرایش</a>
+                                                    <button type="submit" class="btn btn-danger">حذف</button>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <form class="form-group" action="{{route('users.setAdmin',['user'=>$user->id])}}" method="post">
-                                                        {{csrf_field()}}
-                                                        <button type="submit" class="btn btn-sm btn-success">تبدیل به ادمین</button>
-                                                    </form>
-                                                </div>
-                                            </div>
+
+                                            </form>
                                         </td>
                                     </tr>
 
@@ -81,9 +72,8 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>نام کاربر</th>
-                                    <th>ایمیل</th>
-                                    <th>موبایل</th>
+                                    <th>نام مقام</th>
+                                    <th>توضیحات</th>
                                     <th>تنظیمات</th>
                                 </tr>
                                 </tfoot>

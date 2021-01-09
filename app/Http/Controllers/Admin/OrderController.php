@@ -10,6 +10,12 @@ class OrderController extends Controller
 {
 
 
+    public function indexProcessingOrders()
+    {
+        $orders=Order::where('status','processing')->latest()->paginate(30);
+        return view('admin.orders.processing.index',compact('orders'));
+    }
+
     public function index()
     {
         $orders=Order::latest()->paginate(30);
@@ -22,11 +28,6 @@ class OrderController extends Controller
         return view('admin.orders.show',compact('order','orderItems'));
     }
 
-    public function indexProcessingOrders()
-    {
-        $orders=Order::where('status','processing')->latest()->paginate(30);
-        return view('admin.orders.processing.index',compact('orders'));
-    }
 
     public function confirm(Order $order)
     {

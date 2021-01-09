@@ -58,7 +58,7 @@ class OrderController extends Controller
         $order->user_id=$user->id;
         $order->city_id=$address->city->id;
         $order->address=$address->body;
-        $order->status="processing";
+        $order->status="on hold";
         $order->total_price=$request->input('total_price');
         $order->save();
         foreach ($cartItems as $cartItem){
